@@ -1,0 +1,68 @@
+
+<title>Scores Submitted!</title>
+<link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mariomain.css') }}"/>
+<div class="navbar">
+  <a href="/">Home</a>
+  <a href="/play">Input Scores</a>
+  <i id="versionSub"></i>
+</div>
+<div class="bg"><br>
+  <script async="async">
+    window.onload = function(){
+      var xhttp = new XMLHttpRequest();
+      xhttp.open("GET", "./ping", false);
+      xhttp.setRequestHeader("Content-type", "application/json");
+      xhttp.send();
+      console.log(xhttp.responseText);
+      var response = JSON.parse(xhttp.responseText);
+      console.log(response);
+      document.getElementById("versionSub").innerHTML = ("Botsorted - v."+response.version);
+    }
+  </script>
+  }
+<div class="container">
+  <h1> Submitted!</h1><img src="{{ url_for('static',filename='thumbsup.png') }}"> <br>
+  <h2>View updated table below</h2>
+  <br>
+</div>
+<div class="container_op">
+  <p><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>LastGame</th>
+      <th>Name</th>
+      <th>losses</th>
+      <th>mu</th>
+      <th>played</th>
+      <th>wins</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>20/07/2018</td>
+      <td>Tris</td>
+      <td>0</td>
+      <td>101.22</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>20/07/2018</td>
+      <td>Nelg</td>
+      <td>1</td>
+      <td>98.778</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>29/04/2018</td>
+      <td>Ru</td>
+      <td>0</td>
+      <td>100</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table></p>
+</div>
+</div>

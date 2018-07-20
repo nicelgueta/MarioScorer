@@ -1,0 +1,133 @@
+html,body{
+  height:100%;width:100%;min-height:100%;position:relative;
+  color:#000;
+  text-align: center;
+}
+.navbar {
+    overflow: hidden;
+    background-color: #04e2ab;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar a {
+    float: left;
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.navbar i {
+    float: right;
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration:none;
+}
+.bg{
+    background-image: url("./mainBack.jpg");
+    height: 140%;
+    width: auto;
+    background-position: center;
+    background-repeat: repeat-y;
+    background-size: cover;
+    overflow: scroll;
+}
+body {
+  text-align:center;
+}
+h1{
+  color: #24d8b1;
+  font-size: 60px;
+}
+h2 {
+	color: #06d396;
+  font-size: 50px;
+}
+h3 {
+	color: #06d396;
+  font-size: 50px;
+}
+.container{
+  display: block;
+  position: relative;
+  margin: 40px auto;
+  height: auto;
+  width: 80%;
+  padding: 20px;
+  opacity: 0.9;
+  background-color: #ffffff;
+  border-radius: 25px;
+}
+.container_op{
+  display: block;
+  position: relative;
+  margin: 40px auto;
+  height: auto;
+  width: 90%;
+  padding: 20px;
+  opacity: 1.0;
+  background-color: #ffffff;
+  border-radius: 25px;
+}
+table {
+  color: #36edb6;
+  align-content: center;
+  border-radius: 25px;
+  font-family: Helvetica, Arial, sans-serif;
+  width: 100%;
+  /* Table reset stuff */
+  border-collapse: collapse; border-spacing: 0;
+}
+
+td, th {  border: 0 none; height: 70px; text-align: center;}
+
+th {
+  /* Gradient Background */
+	background: linear-gradient(#36edb6 0%,#444 100%);
+	color: #FFF;
+  font-weight: bold;
+  font-size: 32px;
+  text-align: center;
+  width: 100px
+}
+
+td { background: #FAFAFA; text-align: center; width: 100px; font-size: 35px;}
+
+/* Zebra Stripe Rows */
+
+tr:nth-child(even) td { background: #EEE; font-weight: bold;}
+tr:nth-child(odd) td { background: #FDFDFD; font-weight: bold;}
+
+/* First-child blank cells! */
+
+/* Add border-radius to specific cells! */
+tr:first-child th:nth-child(2) {
+  border-radius: 5px 0 0 0;
+}
+
+tr:first-child th:last-child {
+  border-radius: 0 5px 0 0;
+}
+.player_btn{
+  height: 230px;
+  width: 200px;
+  background-color: #eafffa;
+}
+img.plr_img{
+  height: 100%
+}
+button.player_btn{
+  border-radius: 25px;
+}
+button.player_btn:hover{
+  background-color: #06d396;
+}
+.plr_container{
+  display: inline-block;
+}
+.podiumPos{
+  font-size: 50px;
+  color: #24d8b1;
+}

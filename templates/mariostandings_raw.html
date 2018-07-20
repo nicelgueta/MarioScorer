@@ -1,0 +1,51 @@
+
+<title>Current Standings</title>
+<link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mariomain.css') }}"/>
+<nav class="navbar">
+  <a href="/">Home</a>
+  <a href="/play">Input Scores</a>
+  <i id="versionSub"></i>
+</nav>
+<div class="bg">
+  <div class="container">
+    <h1> Big Old Mariothon</h1>
+    <h2>Current Standings</h2>
+    <br>
+  </div>
+  <div class="container_op">
+    <p>%s</p>
+  </div>
+  <br>
+  <div class="container">
+    <h1>Podium</h1>
+    <div class=plr_container>
+      <h2 id=player2></h2>
+      <button class="player_btn">
+        <img id="image2" class="plr_img">
+        <hover></hover>
+      </button><br><br>
+      <b class="podiumPos">2<b>
+      </div>
+      <div class=plr_container>
+        <h2 id=player1></h2>
+        <button class="player_btn">
+          <img id="image1" class="plr_img">
+          <hover></hover>
+        </button><br><br><br>
+        <b class="podiumPos">1<b>
+      </div>
+      <div class=plr_container>
+        <h2 id=player3></h2>
+        <button class="player_btn">
+          <img id="image3" class="plr_img">
+          <hover></hover>
+        </button><br>
+        <b class="podiumPos">LITH<b>
+      </div>
+    </div>
+    <br><br>
+    <p></p>
+    <br>
+  </div>
+<script src="{{ url_for('static',filename='getstandings.js') }}">
+</script>

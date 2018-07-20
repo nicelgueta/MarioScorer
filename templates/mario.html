@@ -1,0 +1,91 @@
+
+<title>Big Old Mario Kart</title>
+
+<link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/play.css') }}"/>
+<div class="navbar">
+  <a href="/">Home</a>
+  <a href="/play">Input Scores</a>
+  <i id="versionSub"></i>
+</div>
+<div class="bg"><br>
+  <script async="async">
+    window.onload = function(){
+      var xhttp = new XMLHttpRequest();
+      xhttp.open("GET", "./ping", false);
+      xhttp.setRequestHeader("Content-type", "application/json");
+      xhttp.send();
+      console.log(xhttp.responseText);
+      var response = JSON.parse(xhttp.responseText);
+      console.log(response);
+      document.getElementById("versionSub").innerHTML = ("v."+response.version);
+    }
+  </script>
+<div class="container">
+  <h1> Big Old Mario Kart Tournament</h1>
+	<h2>Select number of players</h2>
+
+  <ul>
+  <li>
+    <input onclick="kickOffScores(2)" type="radio" id="f-option" name="no_player">
+    <label for="f-option">Two</label>
+
+    <div class="check"></div>
+  </li>
+  <li>
+    <input onclick="kickOffScores(3)" type="radio" id="s-option" name="no_player">
+    <label for="s-option">Three</label>
+
+    <div class="check"><div class="inside"></div></div>
+  </li>
+
+  <!--<li>
+    <input onclick="kickOffScores(4)" type="radio" id="t-option" name="no_player">
+    <label for="t-option">Four</label>
+
+    <div class="check"><div class="inside"></div></div>
+  </li>-->
+</ul>
+<br><br><br><br>
+
+<div id="ins_txt">
+  <h2 id="choice" ></h2><br>
+  <form action="/mariosubmit" method="POST">
+    <input hidden type="text" id="marioSubmit" name="marioSubmit" value="">
+    <input type="submit" value="Submit Scores!" id="submission">
+  </form>
+  <p class="error" id="errormsg"><b><i></i></b></p>
+
+
+<div class=plr_container>
+  <h3>Ru</h3>
+  <button onclick="usePlayer('Ru')" id="Ru" class="player_btn">
+    <img src="{{ url_for('static',filename='Ru.png') }}" class="plr_img">
+    <hover></hover>
+  </button>
+</div>
+
+<div class=plr_container>
+  <h3>Nelg</h3>
+  <button onclick="usePlayer('Nelg')" id="Nelg" class="player_btn">
+    <img src="{{ url_for('static',filename='Nelg.png') }}"  class="plr_img">
+    <hover></hover>
+  </button>
+</div>
+
+<div class=plr_container>
+  <h3>Tris</h3>
+  <button onclick="usePlayer('Tris')" id="Tris" class="player_btn">
+    <img src="{{ url_for('static',filename='Tris.png') }}"  class="plr_img">
+    <hover></hover>
+  </button>
+</div>
+<br>
+<p>Winner: <b id="winner"></b></p>
+<p id="runner1p">Runner Up: <b id="runner1"></b></p>
+<!--<p>2nd Runner Up: <b id="runner2"></b></p>-->
+<p>Loser: <b id="loser"></b></p>
+</div>
+
+<script src="{{ url_for('static',filename='addplayer.js') }}">
+
+</script>
