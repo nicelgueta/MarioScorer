@@ -33,7 +33,7 @@ class MarioBoard(object):
         return df
     def save_db_table(self,df):
         dfDict = list(df.T.to_dict().values())
-        self.mariodb.update_one({'docType':'table'},{'$set':{'dataFrameDict':dfDict}})
+        self.mariodb.update_one({'docType':'table'},{'$set':{'table':dfDict}})
         return
 
     def Leaderboard(self):
@@ -354,7 +354,7 @@ class MarioBoard(object):
                 self.playerdf.loc[int(self.active[0]), 'wins'] = int(self.playerdf.loc[int(self.active[0]), 'wins']) + 1
                 self.playerdf.loc[int(self.active[2]), 'losses'] = int(self.playerdf.loc[int(self.active[2]), 'losses']) + 1
                 self.db.log.info(self.playerdf.to_html())
-                self.save_db_table(self.playerdf)
+            self.save_db_table(self.playerdf)
 
         # Two player scenario: Counting Plays, Draws, Losses and Wins.
         if int(self.response) == 2:
