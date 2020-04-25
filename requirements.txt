@@ -13,7 +13,7 @@ pyparsing==2.2.0
 python-bittrex==0.3.0
 python-dateutil==2.6.1
 pytz==2017.3
-requests==2.7.0
+requests==2.20.0
 six==1.11.0
 trueskill==0.4.4
 Werkzeug==0.14.1
